@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
         ComputerScore.text = computerPoints.ToString();
         ResetGame();
     }
-
+    // ABSTRACTION Method
     public void ResetGame()
     {
         Ball.ResetPosition();
@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
         Computer.ResetPosition();
         Ball.StartBallForce();
     }
-
+    // ABSTRACTION Method
     public void StartNewGame()
     {
         MainMenu.SetActive(false);

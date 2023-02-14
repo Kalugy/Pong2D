@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// INHERITANCE Parent
 public class Paddle : MonoBehaviour
 {
     protected new Rigidbody2D rigidbody;
@@ -16,4 +17,6 @@ public class Paddle : MonoBehaviour
         rigidbody.velocity = Vector2.zero;
         rigidbody.position = new Vector2(rigidbody.position.x, 0f);
     }
+    // POLYMORPHISM
+    public virtual void MovePaddle() {}
 }

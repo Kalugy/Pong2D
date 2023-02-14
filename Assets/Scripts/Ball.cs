@@ -15,7 +15,7 @@ public class Ball : MonoBehaviour
     {
         StartBallForce();
     }
-
+    // ABSTRACTION Method
     public void StartBallForce()
     {
         float x = Random.value < 0.5f ? -1f : 1f;
@@ -24,7 +24,7 @@ public class Ball : MonoBehaviour
         Vector2 force = new Vector2(x, y);
         rigidbody.AddForce(force * speed);
     }
-
+    // ABSTRACTION Method
     public void AddingExternalForce(Vector2 force)
     {
         rigidbody.AddForce(force, ForceMode2D.Impulse);

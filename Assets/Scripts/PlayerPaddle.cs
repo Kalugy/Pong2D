@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// INHERITANCE Child
 public class PlayerPaddle : Paddle
 {
+    // ENCAPSULATION
     public Vector2 direction { get; private set; }
     private void Update()
     {
@@ -22,11 +24,15 @@ public class PlayerPaddle : Paddle
     }
     private void FixedUpdate()
     {
-        if(direction.sqrMagnitude != 0)
+        MovePaddle();
+    }
+    // POLYMORPHISM
+    public override void MovePaddle()
+    {
+        if (direction.sqrMagnitude != 0)
         {
             rigidbody.AddForce(direction * speed);
         }
     }
-    
 
 }
