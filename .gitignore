@@ -51,3 +51,7 @@ ExportedObj/
 # Unity3D generated meta files
 *.pidb.meta
 
+.zip
+webgl_sharing
+
+
