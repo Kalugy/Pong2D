@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
 
     public TMP_Text PlayerScore;
     public TMP_Text ComputerScore;
+    public GameObject Environment;
+    public GameObject MainMenu;
     public void AddPlayerScore()
     {
         playerPoints++;
@@ -34,4 +36,14 @@ public class GameManager : MonoBehaviour
         Computer.ResetPosition();
         Ball.StartBallForce();
     }
+
+    public void StartNewGame()
+    {
+        MainMenu.SetActive(false);
+        PlayerScore.gameObject.SetActive(true);
+        ComputerScore.gameObject.SetActive(true);
+        Environment.SetActive(true);
+        Ball.StartBallForce();
+    }
+
 }
