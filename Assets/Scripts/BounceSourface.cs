@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BounceSourface : MonoBehaviour
 {
-    public float strength = 2f;
+    public float strength = 1f;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

@@ -19,8 +19,7 @@ public class Ball : MonoBehaviour
     public void StartBallForce()
     {
         float x = Random.value < 0.5f ? -1f : 1f;
-        float y = Random.value < 0.5f ? Random.Range(-1f, -0.5f)
-                                      : Random.Range(0.5f, 1f);
+        float y = 1f;
         Vector2 force = new Vector2(x, y);
         rigidbody.AddForce(force * speed);
     }
