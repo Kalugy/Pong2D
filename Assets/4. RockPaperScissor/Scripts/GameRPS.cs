@@ -14,7 +14,9 @@ public class GameRPS : MonoBehaviour
     public const string option2 = "rock";
     public const string option3 = "scissors";
 
-    
+    public string resultMatch;
+    public string computerMatch;
+    public string playerMatch;
 
     // Start is called before the first frame update
     void Start()
@@ -26,11 +28,18 @@ public class GameRPS : MonoBehaviour
 
     private void ChoosePlayer(string playerOption)
     {
-        string computerOption = ChooseComputer();
-        Debug.Log("option " + playerOption + "computerOption " + computerOption);
+        computerMatch = ChooseComputer();
+        playerMatch = playerOption;
+        Debug.Log("option " + playerOption + "computerOption " + computerMatch);
         //CompareOptions(playerOption, computerOption);
-        string result = GetResults(playerOption, computerOption);
+        string result = GetResults(playerOption, computerMatch);
         Debug.Log("result " + result);
+        resultMatch = result;
+    }
+
+    public string GetResult()
+    {
+        return resultMatch;
     }
 
     public void Test()
@@ -75,15 +84,15 @@ public class GameRPS : MonoBehaviour
             case "scissorspaper":
             case "rockscissors":
             case "paperrock":
-                return "You chose " + userChoice + " and the computer chose " + computerChoice + " , YOU WIN!";
+                return "WIN";
             case "paperscissors":
             case "scissorsrock":
             case "rockpaper":
-                return "You chose " + userChoice + " and the computer chose " + computerChoice + " , YOU LOSE!";
+                return "LOSE";
             case "scissorsscissors":
             case "rockrock":
             case "paperpaper":
-                return "You chose " + userChoice + " and the computer chose " + computerChoice + "  , ITS A DRAW!";
+                return "DRAW";
             default: return "error";
         }
     }
